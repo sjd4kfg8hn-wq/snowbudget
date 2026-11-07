@@ -9,22 +9,13 @@ body, html {
   color: #e0f7fc;
 }
 
+/* Posicionamiento del HUD abajo del todo para dejar libre el parabrisas */
 #cockpit-container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(
-      to bottom, 
-      rgba(3, 10, 22, 0.35), 
-      rgba(3, 10, 22, 0.8)
-    ), 
-    url('../assets/image/ahorrosnow.jpg');
-  background-size: cover;
-  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  height: 100vh;
+  padding: 15px 25px;
   box-sizing: border-box;
 }
 
@@ -33,11 +24,9 @@ body, html {
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
+  max-width: 1250px;
+  margin: auto auto 10px auto; /* Centrado horizontal y empujado hacia abajo */
   z-index: 2;
-  align-self: flex-end;
-  margin-bottom: 20px;
 }
 .metric-total {
   margin-top: 10px;
@@ -49,12 +38,12 @@ body, html {
 }
 
 .hud-panel {
-  background: rgba(10, 25, 47, 0.65);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 243, 255, 0.3);
+  background: rgba(6, 18, 36, 0.65);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 243, 255, 0.25);
   border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 14px 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .hud-panel h2 {
