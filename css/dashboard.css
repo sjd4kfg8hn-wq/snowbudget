@@ -1,1 +1,64 @@
+/* Estilos específicos para los paneles del Dashboard / HUD */
+.hud-panel {
+  background: rgba(6, 18, 36, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 243, 255, 0.25);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  transition: all 0.3s ease;
+}
 
+.hud-panel:hover {
+  border-color: rgba(0, 243, 255, 0.6);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.12);
+}
+
+.glow-blue {
+  box-shadow: 0 0 15px rgba(0, 102, 255, 0.15);
+}
+
+.glow-purple {
+  box-shadow: 0 0 15px rgba(157, 0, 255, 0.15);
+}
+
+/* Métricas internas estilo terminal alpina */
+.telemetry-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.metric-box {
+  background: rgba(0, 243, 255, 0.03);
+  border: 1px solid rgba(0, 243, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.metric-box .label {
+  font-size: 0.8rem;
+  color: #8ab4f8;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.metric-box .value {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Contenedor para gráficos de Chart.js en el HUD */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  margin-top: 10px;
+}
