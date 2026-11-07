@@ -84,8 +84,16 @@ const runner = Runner.create();
 
 Runner.run(runner, engine);
 document
-    .getElementById("addBeamBtn")
-    .addEventListener("click", addBeam);
+    .getElementById("simulateBtn")
+    .addEventListener("click", function(){
+
+        Matter.Body.setStatic(
+            ball,
+            false
+        );
+
+        console.log("SIMULACION ON");
+});
 
 function addBeam(){
 
