@@ -50,6 +50,7 @@ const goal = Bodies.rectangle(
         }
     }
 );
+const beams = [];
 
 // Bola
 const ball = Bodies.circle(
@@ -77,3 +78,28 @@ Render.run(render);
 const runner = Runner.create();
 
 Runner.run(runner, engine);
+document
+    .getElementById("addBeamBtn")
+    .addEventListener("click", addBeam);
+
+function addBeam(){
+
+    const beam = Bodies.rectangle(
+        400,
+        300,
+        200,
+        20,
+        {
+            render:{
+                fillStyle:"#8B5A2B"
+            }
+        }
+    );
+
+    beams.push(beam);
+
+    Composite.add(
+        engine.world,
+        beam
+    );
+}
