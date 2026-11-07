@@ -157,14 +157,28 @@ canvas.addEventListener("mouseup", function(){
     isDragging = false;
 
 });
-canvas.addEventListener("dblclick", function(){
+canvas.addEventListener("dblclick", function(event){
 
-    if(!selectedBeam){
-        return;
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    for(const beam of beams){
+
+        const dx = mouseX - beam.position.x;
+        const dy = mouseY - beam.position.y;
+
+        if(
+            Math.abs(dx) < 100 &&
+            Math.abs(dy) < 20
+        ){
+
+            Matter.Body.rotate(
+                beam,
+                Math.PI / 12
+            );
+
+            break;
+        }
     }
 
-    Matter.Body.rotate(
-        selectedBeam,
-        Math.PI / 12
-    );
 });
