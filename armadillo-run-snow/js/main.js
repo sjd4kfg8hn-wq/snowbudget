@@ -25,15 +25,16 @@ const render = Render.create({
 });
 
 // Suelo
-const ground = Bodies.rectangle(
-    window.innerWidth / 2,
-    window.innerHeight - 30,
-    window.innerWidth,
-    60,
+const goal = Bodies.rectangle(
+    window.innerWidth - 120,
+    window.innerHeight - 120,
+    80,
+    80,
     {
-        isStatic: true,
-        render: {
-            fillStyle: "#FFFFFF"
+        isStatic:true,
+        isSensor:true,
+        render:{
+            fillStyle:"#00ff66"
         }
     }
 );
@@ -54,7 +55,8 @@ const ball = Bodies.circle(
 // Añadir objetos
 Composite.add(engine.world, [
     ground,
-    ball
+    ball,
+    goal
 ]);
 
 // Iniciar motor
