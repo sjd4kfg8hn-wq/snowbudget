@@ -86,16 +86,24 @@ function addBeam(){
 
     const beam = Bodies.rectangle(
         400,
-        300,
+        150,
         200,
         20,
         {
+            isStatic:true,
             render:{
                 fillStyle:"#8B5A2B"
             }
         }
     );
 
+    beams.push(beam);
+
+    Composite.add(
+        engine.world,
+        beam
+    );
+}
     beams.push(beam);
 
     Composite.add(
