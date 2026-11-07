@@ -104,10 +104,3 @@ function addBeam(){
         beam
     );
 }
-    beams.push(beam);
-
-    Composite.add(
-        engine.world,
-        beam
-    );
-}
