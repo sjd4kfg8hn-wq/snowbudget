@@ -53,6 +53,7 @@ const goal = Bodies.rectangle(
 const beams = [];
 let beamCount = 0;
 let selectedBeam = null;
+let isDragging = false;
 
 // Bola
 const ball = Bodies.circle(
@@ -125,7 +126,7 @@ canvas.addEventListener("mousedown", function(event){
             Math.abs(dy) < 20
         ){
             selectedBeam = beam;
-
+            isDragging = true;
             console.log(
                 "Viga seleccionada",
                 beam.id
@@ -134,5 +135,25 @@ canvas.addEventListener("mousedown", function(event){
             break;
         }
     }
+
+});
+canvas.addEventListener("mousemove", function(event){
+
+    if(!isDragging || !selectedBeam){
+        return;
+    }
+
+    Matter.Body.setPosition(
+        selectedBeam,
+        {
+            x: event.clientX,
+            y: event.clientY
+        }
+    );
+
+});
+canvas.addEventListener("mouseup", function(){
+
+    isDragging = false;
 
 });
