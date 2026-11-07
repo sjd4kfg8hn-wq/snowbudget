@@ -62,6 +62,7 @@ const ball = Bodies.circle(
     100,
     25,
     {
+        isStatic: true,
         restitution: 0.4,
         render: {
             fillStyle: "#ff8800"
