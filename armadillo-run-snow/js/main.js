@@ -52,6 +52,7 @@ const goal = Bodies.rectangle(
 );
 const beams = [];
 let beamCount = 0;
+let selectedBeam = null;
 
 // Bola
 const ball = Bodies.circle(
@@ -107,3 +108,31 @@ function addBeam(){
         beam
     );
 }
+canvas.addEventListener("mousedown", function(event){
+
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    selectedBeam = null;
+
+    for(const beam of beams){
+
+        const dx = mouseX - beam.position.x;
+        const dy = mouseY - beam.position.y;
+
+        if(
+            Math.abs(dx) < 100 &&
+            Math.abs(dy) < 20
+        ){
+            selectedBeam = beam;
+
+            console.log(
+                "Viga seleccionada",
+                beam.id
+            );
+
+            break;
+        }
+    }
+
+});
