@@ -54,6 +54,7 @@ const beams = [];
 let beamCount = 0;
 let selectedBeam = null;
 let isDragging = false;
+let simulationMode = false;
 
 // Bola
 const ball = Bodies.circle(
@@ -181,4 +182,16 @@ canvas.addEventListener("dblclick", function(event){
         }
     }
 
+});
+document
+    .getElementById("simulateBtn")
+    .addEventListener("click", function(){
+
+        simulationMode = !simulationMode;
+
+        console.log(
+            simulationMode
+            ? "SIMULACION ON"
+            : "SIMULACION OFF"
+        );
 });
