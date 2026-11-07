@@ -51,6 +51,7 @@ const goal = Bodies.rectangle(
     }
 );
 const beams = [];
+let beamCount = 0;
 
 // Bola
 const ball = Bodies.circle(
@@ -84,9 +85,11 @@ document
 
 function addBeam(){
 
+    beamCount++;
+
     const beam = Bodies.rectangle(
-        400,
-        150,
+        300 + beamCount * 30,
+        150 + beamCount * 20,
         200,
         20,
         {
