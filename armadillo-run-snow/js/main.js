@@ -25,6 +25,18 @@ const render = Render.create({
 });
 
 // Suelo
+const ground = Bodies.rectangle(
+    window.innerWidth / 2,
+    window.innerHeight - 30,
+    window.innerWidth,
+    60,
+    {
+        isStatic: true,
+        render: {
+            fillStyle: "#FFFFFF"
+        }
+    }
+);
 const goal = Bodies.rectangle(
     window.innerWidth - 120,
     window.innerHeight - 120,
