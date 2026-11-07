@@ -39,6 +39,14 @@ body, html {
   align-self: flex-end;
   margin-bottom: 20px;
 }
+.metric-total {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0, 243, 255, 0.15);
+  padding-top: 6px;
+  display: flex;
+  justify-content: space-between;
+}
 
 .hud-panel {
   background: rgba(10, 25, 47, 0.65);
