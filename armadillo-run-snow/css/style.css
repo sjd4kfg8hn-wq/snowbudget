@@ -17,3 +17,19 @@ body{
     width:100%;
     height:100%;
 }
+#ui{
+    position:absolute;
+    top:15px;
+    left:15px;
+    z-index:100;
+}
+
+#ui button{
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    background:#1976d2;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
