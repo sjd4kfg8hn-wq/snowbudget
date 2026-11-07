@@ -17,7 +17,81 @@
 </head>
 <body>
   <div id="cockpit-container">
-    <!-- Paneles flotantes del HUD e Interfaz principal -->
+    
+    <!-- BARRA SUPERIOR HUD -->
+    <header class="hud-top-bar">
+      <div class="system-status">
+        <span class="pulse-dot"></span> COCKPIT SYSTEM ONLINE
+      </div>
+      <h1 class="hud-logo">SNOW<span>BUDGET</span></h1>
+      <div class="powder-score-pill">
+        POWDER SCORE: <strong id="score-val">87</strong>
+      </div>
+    </header>
+
+    <!-- PANELES FLOTANTES HUD (ÁREA CENTRAL) -->
+    <main class="hud-grid">
+      
+      <!-- Panel 1: Modo Aventura (Ruta de Ascensión) -->
+      <section class="hud-panel glow-cyan">
+        <h2><span class="icon">🏔</span> MODO AVENTURA: OBJETIVOS</h2>
+        <div class="adventure-content">
+          <div class="goal-info">
+            <span class="goal-name">Jones Flagship</span>
+            <span class="goal-target">1500€</span>
+            <span class="goal-pct">25%</span>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 25%;"></div>
+            <div class="rider-icon" style="left: 25%;">🏂</div>
+          </div>
+          <div class="waypoints">
+            <span class="active">Primer Refugio</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 2: Telemetría / Resumen Financiero -->
+      <section class="hud-panel glow-blue">
+        <h2><span class="icon">❄</span> Estado Económico</h2>
+        <div class="telemetry-metrics">
+          <div class="metric-box">
+            <span class="label">Gastos</span>
+            <span class="value pink">1250€</span>
+          </div>
+          <div class="metric-box">
+            <span class="label">Ingresos</span>
+            <span class="value cyan">2400€</span>
+          </div>
+        </div>
+        <canvas id="miniIncomeChart" height="60"></canvas>
+      </section>
+
+      <!-- Panel 3: Tendencia de Ahorro -->
+      <section class="hud-panel glow-cyan">
+        <h2><span class="icon">📈</span> Tendencia de ahorro</h2>
+        <div class="chart-container">
+          <canvas id="trendChart" height="120"></canvas>
+        </div>
+      </section>
+
+      <!-- Panel 4: Logros Desbloqueados -->
+      <section class="hud-panel glow-purple">
+        <h2><span class="icon">🏆</span> LOGROS DESBLOQUEADOS</h2>
+        <div class="achievement-preview">
+          <span class="achievement-badge">🔥 Powder Master</span>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- BARRA DE CONTROL INFERIOR (COCKPIT DASH) -->
+    <footer class="hud-footer-controls">
+      <button class="cockpit-btn" id="btn-add-expense">➕ Añadir Gasto</button>
+      <button class="cockpit-btn" id="btn-add-income">💰 Añadir Ingreso</button>
+      <button class="cockpit-btn" id="btn-add-goal">🏔 Nuevo Objetivo</button>
+    </footer>
+
   </div>
 
   <!-- Carga del punto de entrada en JavaScript -->
