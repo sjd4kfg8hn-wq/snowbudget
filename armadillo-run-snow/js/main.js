@@ -84,16 +84,24 @@ const runner = Runner.create();
 
 Runner.run(runner, engine);
 document
+    .getElementById("addBeamBtn")
+    .addEventListener("click", addBeam);
+
+document
     .getElementById("simulateBtn")
-    .addEventListener("click", function(){
+    .addEventListener("click", startSimulation);
 
-        Matter.Body.setStatic(
-            ball,
-            false
-        );
+function startSimulation(){
 
-        console.log("SIMULACION ON");
-});
+    Matter.Body.setStatic(
+        ball,
+        false
+    );
+
+    console.log("SIMULACION ON");
+
+}
+
 
 function addBeam(){
 
@@ -192,15 +200,4 @@ canvas.addEventListener("dblclick", function(event){
     }
 
 });
-document
-    .getElementById("simulateBtn")
-    .addEventListener("click", function(){
 
-        simulationMode = !simulationMode;
-
-        console.log(
-            simulationMode
-            ? "SIMULACION ON"
-            : "SIMULACION OFF"
-        );
-});
